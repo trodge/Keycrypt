@@ -27,6 +27,15 @@ for (api in secrets) {
 console.log('gibberish:');
 console.log(JSON.stringify(gibberish, null, 4));
 
+var el = document.createElement('h1');
+el.innerHTML = 'Your gibberish:';
+document.body.appendChild(el);
+var em = document.createElement('pre');
+document.body.appendChild(em);
+el = document.createElement('code');
+el.innerHTML = JSON.stringify(gibberish, null, 4);
+em.appendChild(el);
+
 decrypted = {};
 for (api in gibberish) {
   decrypted[api] = {};
